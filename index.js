@@ -3,7 +3,6 @@ require('dotenv').config()
 const cors = require('cors')
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
-
 const app = express()
 const port = process.env.PORT || 5000;
 
@@ -34,16 +33,17 @@ async function run() {
 
     app.post('/order', async(req, res) => {
         const order = req.body;
+        console.log(order);
         order.date = new Date().toLocaleDateString()
         const result = await orderCollection.insertOne(order);
-        res.send(result);
+        res.json(result);
     })
 
     // rating posting 
     app.post('/rating', async(req, res) => {
       const rating = req.body;
       const result = await ratingCollection.insertOne(rating);
-      res.send(result);
+      res.json(result);
     })
 
     // all get method declare here 
