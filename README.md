@@ -1,4 +1,4 @@
-# This is Niche type website.
+# This is Niche type website Server Code.
 
 ### View our website
 [Live](https://niche-website-b62cc.firebaseapp.com/)
